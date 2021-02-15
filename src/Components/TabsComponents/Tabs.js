@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+//import './ProjectTab/node_modules/react-tabs/style/react-tabs.css';
 import MyTable from './HoursTab/DaysOfWeekHours';
 import FcoQmpsComp from './FcoQpsTab/FcoQmpsComp';
-
+import CommentsComp from './CommentsTab/CommentsComp';
+import ProjectComp from './ProjectTab/ProjectComp';
+import TaskInfoComp from './TaskInfoTab/TaskInfoComp';
 
 
 
@@ -23,10 +25,10 @@ class MyTabs extends Component {
             <TabPanel><MyTable/></TabPanel>
             <TabPanel><FcoQmpsComp/></TabPanel>
             <TabPanel>text for 3</TabPanel>
-            <TabPanel>text for 4</TabPanel>
+            <TabPanel><CommentsComp/></TabPanel>
             <TabPanel>text for 5</TabPanel>
-            <TabPanel>text for 6</TabPanel>
-            <TabPanel>text for 7</TabPanel>
+            <TabPanel><ProjectComp/></TabPanel>
+            <TabPanel><TaskInfoComp/></TabPanel>
         </Tabs>
         );
     }
