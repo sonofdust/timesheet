@@ -1,9 +1,8 @@
 import './App.css';
 import React, { Component } from "react";
-import NewComp from './Components/NewComp';
 import MyTabs from './Components/TabsComponents/Tabs';
-import JobTask from './Components/JobTasks';
-import PayRollInfo from './Components/PayRollInfo';
+import JobTask from './Components/JobTasksComp/JobTasks';
+import PayRollInfo from './Components/PayRollInfoComp/PayRollInfo';
 import ApproverComp from './Components/ApproverComp';
 
 class App extends Component {
@@ -12,14 +11,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 style={this.styles}>Welcome</h1>
-        <NewComp />
-        <table align="center">
-          <tbody>
-            <tr><td><JobTask /></td><td><MyTabs /></td></tr>
-            <tr><td><PayRollInfo /></td><td><ApproverComp /></td></tr>
-          </tbody>
-        </table>
+        {/* <h1 style={this.styles}>Welcome</h1>
+        <NewComp /> */}
+        <div className="container">
+          <div className="container-row"><JobTask /><MyTabs /></div>
+          <div className="container-row"><PayRollInfo /><ApproverComp /></div>
+        </div>
       </div>
     )
   }

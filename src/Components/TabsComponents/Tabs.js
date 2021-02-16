@@ -12,7 +12,7 @@ import TaskInfoComp from './TaskInfoTab/TaskInfoComp';
 class MyTabs extends Component {
     styles = { fontStyle: "italics", color: "purple" }
     render() {
-        return (<Tabs defaultIndex={0} onSelect={index => console.log(index)}>
+        return (<div className="border"><Tabs defaultIndex={0} onSelect={index => console.log(index)}>
             <TabList>
                 <Tab>Hours</Tab>
                 <Tab>FCO/QPMS</Tab>
@@ -22,14 +22,15 @@ class MyTabs extends Component {
                 <Tab>Project</Tab>
                 <Tab>Task Info.</Tab>
             </TabList>
-            <TabPanel><MyTable/></TabPanel>
-            <TabPanel><FcoQmpsComp/></TabPanel>
+            <TabPanel><MyTable /></TabPanel>
+            <TabPanel><FcoQmpsComp /></TabPanel>
             <TabPanel>text for 3</TabPanel>
-            <TabPanel><CommentsComp/></TabPanel>
+            <TabPanel><CommentsComp /></TabPanel>
             <TabPanel>text for 5</TabPanel>
-            <TabPanel><ProjectComp/></TabPanel>
-            <TabPanel><TaskInfoComp/></TabPanel>
+            <TabPanel><ProjectComp /></TabPanel>
+            <TabPanel><TaskInfoComp /></TabPanel>
         </Tabs>
+        </div>
         );
     }
 }
