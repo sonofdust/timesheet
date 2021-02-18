@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import PayRollInfo from './Components/PayRollInfoComp/PayRollInfo';
 import ApproverComp from './Components/ApproverComp';
 import RadioGroup from './Components/Common/radio_group';
-//import NewComp from './Components/NewComp';
+import NewComp from './Components/NewComp';
 import WorkHours from './Components/HoursTab/DaysOfWeekHours';
 import FcoQpmsComp from './Components/FcoQmpsTab/FcoQmpsComp';
 //import CommentsComp from './Components/Common/TabsComponents/CommentsTab/CommentsComp';
@@ -48,6 +48,7 @@ class App extends Component {
     console.log(this.state.display);
     return (
       <div className="App">
+        <NewComp/>
         <div className="container">
           <div><RadioGroup screen={this.view} /></div><div>{this.getTab()}</div>
         </div>

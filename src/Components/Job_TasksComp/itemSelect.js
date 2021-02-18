@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function JobSelect() {
+export default function JobSelect(props) {
     const classes = useStyles();
     const [age, setAge] = React.useState('');
     const [open, setOpen] = React.useState(false);
@@ -36,10 +36,10 @@ export default function JobSelect() {
     return (
         <div>
             <FormControl className={classes.formControl}>
-                <InputLabel id="demo-controlled-open-select-label">Job #</InputLabel>
+                <InputLabel id="demo-controlled-open-select-label">{props.title}</InputLabel>
                 <Select
-                    labelId="demo-controlled-open-select-label"
-                    id="demo-controlled-open-select"
+                    labelId={`select-label-${props.label_id}`} 
+                    id={`id-${props.label_id}`}
                     open={open}
                     onClose={handleClose}
                     onOpen={handleOpen}
@@ -49,36 +49,9 @@ export default function JobSelect() {
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={"0000"}>0000</MenuItem>
-                    <MenuItem value={"1000"}>1000</MenuItem>
-                    <MenuItem value={"2000"}>2000</MenuItem>
-                    <MenuItem value={"3000"}>3000</MenuItem>
+                    {props.items.map(e=><MenuItem value={e}>{e}</MenuItem>)}
                 </Select>
             </FormControl>
         </div>
     );
 }
-
-
-// export default JobSelect;
-
-
-
-// import React, { Component } from "react";
-
-// class JobSelect extends Component {
-//     render() {
-//         return (
-//             <select name="job" id="job">
-//                 <option value="0000">0000</option>
-//                 <option value="1000">1000</option>
-//                 <option value="0100">0100</option>
-//                 <option value="0010">0010</option>
-//             </select>
-//         );
-//     }
-// }
-
-
-
-// export default JobSelect;

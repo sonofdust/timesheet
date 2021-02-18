@@ -39,13 +39,13 @@ export default function MyTable() {
                         <TableHead>
                             <TableRow>
                                 <TableCell align="left"></TableCell>
-                                {Object.keys(rows).map((e) => (<TableCell align="left">{e}</TableCell>))}
+                                {Object.keys(rows).map((e,i) => (<TableCell align="left">{e}</TableCell>))}
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {Object.keys(rows.FRI).map((e) =>
+                            {Object.keys(rows.FRI).map((e,i) =>
                             (
-                                <TableRow>
+                                <TableRow key={`hours-${i}`}>
                                     {<TableCell align="left">{`REG`}<br />{`OT`}</TableCell>}
                                     {Object.keys(rows).map((x) => (<TableCell align="left">{`${rows[x][e].REG}`}<br />{`${rows[x][e].OT}`}</TableCell>))}
                                 </TableRow>

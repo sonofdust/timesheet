@@ -9,13 +9,12 @@ class CommentsComp extends Component {
             <div className="container">
                 <div className="container-row">
                     <JobTasksComp />
-
-                    {/* <div className="txtcontainer">
+                    <div className="txtcontainer">
                         <div className="border"><textarea className="width">Test</textarea></div>
                         <div className="border"><textarea className="width">Test</textarea></div>
                         <div className="border"><textarea className="width">Test</textarea></div>
                         <div className="border"><textarea className="width">Test</textarea></div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         )
