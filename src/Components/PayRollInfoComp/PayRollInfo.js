@@ -1,7 +1,6 @@
 
 import React, { Component } from "react";
 import { Button, TextField, TextareaAutosize } from '@material-ui/core';
-import { spacing } from '@material-ui/system';
 class PayRollInfo extends Component {
     // styles = {
     //     resize: "none"
@@ -11,15 +10,15 @@ class PayRollInfo extends Component {
             <div className="container">
                 <div className="container-row">
                     <TextField
-                    p={2}
+                        p={2}
                         id="filled-secondary"
                         label="Payroll ID"
                         variant="filled"
                         color="secondary"
                     />
                     <TextField
-                    p={2}
-                    id="filled-secondary"
+                        p={2}
+                        id="filled-secondary"
                         label="Payroll Department"
                         variant="filled"
                         color="secondary"
@@ -27,15 +26,14 @@ class PayRollInfo extends Component {
                 </div>
                 <div className="container-row">
                     <TextField
-                    p={2}
-                    id="filled-secondary"
+                        p={2}
+                        id="filled-secondary"
                         label="PTO Hours"
                         variant="filled"
                         color="secondary"
                     />
                     <TextField
-                    p={2}
-                    id="filled-secondary"
+                        id="filled-secondary"
                         label="Phone"
                         variant="filled"
                         color="secondary"

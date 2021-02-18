@@ -1,16 +1,23 @@
 div.container{
   display:flex;
   flex-direction: column;
-  margin: auto;
+  /* margin: auto; */
+  padding: 20px 20px 20px 20px;
+  justify-content: space-between;
+  flex-basis: 50%;
+  width:75%;
+  align-items: left;
   /* background-color: gray; */
-  border: 1px #ccc solid;
+   /* background-color: gray; 
+   border: 1px #ccc solid;   */
 }
 
 div.container-row{
   display:flex;
   flex-direction: row;
   margin: auto;
-  padding: 5px 5px;
+  /* padding: 5px 5px; */
+  justify-content: space-between;
   /* background-color: gray; */
   /* border: 1px #ccc solid; */
 }
@@ -26,5 +33,15 @@ div.container-row{
 
 div.border {
   border-radius: 10px;
-  border: 1px solid black; 
+  align-items: left;
+  /* border: 1px solid black;  */
+} 
+
+textarea.width {
+  resize: none;
+  width:100%;
+}
+
+div.rdoclr {
+  background-color: lightblue;
 } 
