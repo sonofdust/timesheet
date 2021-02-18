@@ -7,7 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import JobTaskComp from './Common/JobTaskComp/JobTask';
+import JobTasksComp from '../Job_TasksComp/Job_Tasks';
 
 const useStyles = makeStyles({
     table: {
@@ -31,19 +31,16 @@ export default function MyTable() {
     const classes = useStyles();
 
     return (
-
         <div className="container">
-            <div>
-                <JobTaskComp />
-            </div>
-            <div>
+            <div className="container-row">
+                <JobTasksComp />
                 <TableContainer component={Paper}>
                     <Table className={classes.table} aria-label="simple table">
                         <TableHead>
                             <TableRow>
                                 <TableCell align="left"></TableCell>
-                                {Object.keys(rows).map((e) => (<TableCell align="left">{e}</TableCell>))};
-                    </TableRow>
+                                {Object.keys(rows).map((e) => (<TableCell align="left">{e}</TableCell>))}
+                            </TableRow>
                         </TableHead>
                         <TableBody>
                             {Object.keys(rows.FRI).map((e) =>
@@ -57,7 +54,6 @@ export default function MyTable() {
                     </Table>
                 </TableContainer>
             </div>
-
         </div>
     )
 }

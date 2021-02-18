@@ -50,8 +50,6 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <div><RadioGroup screen={this.view} /></div><div>{this.getTab()}</div>
-
-          {/* <div className="container-row"><PayRollInfo /><ApproverComp /></div> */}
         </div>
       </div>
     )
