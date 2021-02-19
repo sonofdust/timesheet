@@ -16,6 +16,7 @@
     "@testing-library/user-event": "^12.7.0",
     "date-fns": "^2.17.0",
     "dayjs": "^1.10.4",
+    "lodash": "^4.17.20",
     "luxon": "^1.26.0",
     "material-ui-datetime-range-picker": "^1.0.0",
     "moment": "^2.29.1",
