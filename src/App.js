@@ -1,13 +1,9 @@
 import './App.css';
 import React, { Component } from "react";
-//import JobTask from './Components/JobTasksComp/JobTasks';
-import PayRollInfo from './Components/PayRollInfoComp/PayRollInfo';
-import ApproverComp from './Components/ApproverComp';
 import RadioGroup from './Components/Common/radio_group';
 import NewComp from './Components/NewComp';
 import WorkHours from './Components/HoursTab/DaysOfWeekHours';
 import FcoQpmsComp from './Components/FcoQmpsTab/FcoQmpsComp';
-//import CommentsComp from './Components/Common/TabsComponents/CommentsTab/CommentsComp';
 import CommentsComp from './Components/CommentsTab/CommentsComp';
 import ProjectComp from './Components/ProjectTab/ProjectComp';
 import TaskInfoComp from './Components/TaskInfoTab/TaskInfoComp';
@@ -45,10 +41,10 @@ class App extends Component {
 
   render() {
 
-    console.log(this.state.display);
+    // console.log(this.state.display);
     return (
       <div className="App">
-        <NewComp/>
+        {/* <NewComp/> */}
         <div className="container">
           <div><RadioGroup screen={this.view} /></div><div>{this.getTab()}</div>
         </div>

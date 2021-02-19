@@ -35,7 +35,7 @@ export default function ProjectComp() {
                 <TableCell align="left">Task Id</TableCell>
                 <TableCell align="left">Project/Client</TableCell>
                 <TableCell align="left">Project Manager/Cost Eng</TableCell>
-                <TableCell align="left">Billing/AP COntracts</TableCell>
+                <TableCell align="left">Billing/AP Contracts</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
