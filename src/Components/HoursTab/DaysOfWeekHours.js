@@ -7,7 +7,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import JobTasksComp from '../Job_TasksComp/Job_Tasks';
+//import { JobTaskList } from '../../AppData';
+import { JobTaskList } from '../../AppData';
+
+import ItemSelect from '../Common/itemSelect';
+
+
 
 const useStyles = makeStyles({
     table: {
@@ -15,7 +20,7 @@ const useStyles = makeStyles({
     }
 })
 
-const rows =
+const hours =
 {
     SUN: { JOB1: { REG: 8, OT: 2 }, JOB2: { REG: 8, OT: 2 }, JOB3: { REG: 8, OT: 2 }, JOB4: { REG: 8, OT: 2 } },
     MON: { JOB1: { REG: 8, OT: 2 }, JOB2: { REG: 8, OT: 2 }, JOB3: { REG: 8, OT: 2 }, JOB4: { REG: 8, OT: 2 } },
@@ -26,28 +31,31 @@ const rows =
     SAT: { JOB1: { REG: 8, OT: 2 }, JOB2: { REG: 8, OT: 2 }, JOB3: { REG: 8, OT: 2 }, JOB4: { REG: 8, OT: 2 } }
 
 };
+const header = ["Job ID", "Task ID", "", ...Object.keys(hours)];
 
 export default function MyTable() {
     const classes = useStyles();
-
     return (
         <div className="container">
+            <pre>{JSON.stringify(Object.keys(JobTaskList))}</pre>
             <div className="container-row">
-                <JobTasksComp />
+
+                {/* <JobTasksComp /> */}
                 <TableContainer component={Paper}>
                     <Table className={classes.table} aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell align="left"></TableCell>
-                                {Object.keys(rows).map((e,i) => (<TableCell align="left">{e}</TableCell>))}
+                                {header.map((e, i) => (<TableCell align="left">{e}</TableCell>))}
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {Object.keys(rows.FRI).map((e,i) =>
+                            {Object.keys(hours.FRI).map((e, i) =>
                             (
                                 <TableRow key={`hours-${i}`}>
+                                    <TableCell align="left"><ItemSelect items={Object.keys(JobTaskList)} title={``} label_id={e} /></TableCell>
+                                    <TableCell align="left"><ItemSelect items={Object.keys(JobTaskList)} title={``} label_id={e} /></TableCell>
                                     {<TableCell align="left">{`REG`}<br />{`OT`}</TableCell>}
-                                    {Object.keys(rows).map((x) => (<TableCell align="left">{`${rows[x][e].REG}`}<br />{`${rows[x][e].OT}`}</TableCell>))}
+                                    {Object.keys(hours).map((x) => (<TableCell align="left">{`${hours[x][e].REG}`}<br />{`${hours[x][e].OT}`}</TableCell>))}
                                 </TableRow>
                             ))}
                         </TableBody>

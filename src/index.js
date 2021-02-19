@@ -7,15 +7,23 @@ import { createStore } from 'redux';
 import reducer from './Store/Reducer';
 import { Provider } from "react-redux";
 import { loadState, saveState } from './localStorage';
-import {throttle} from 'lodash/throttle';
+import { throttle } from 'lodash/throttle';
 
 const store = createStore(reducer);
 const presistedState = loadState();
 
-store.subscribe(throttle(() => {
+
+// store.subscribe(throttle(() => {
+//   console.log("WE ARE WRITTING TO THE STORE!!!")
+//   saveState(store.getState());
+// }, 1000));
+
+store.subscribe(() => {
   console.log("WE ARE WRITTING TO THE STORE!!!")
   saveState(store.getState());
-}, 1000));
+});
+
+
 
 ReactDOM.render(
   <React.StrictMode>

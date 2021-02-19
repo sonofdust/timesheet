@@ -1,7 +1,6 @@
 import './Job_Tasks.css'
 import React, { Component } from "react";
-import JobSelect from "./itemSelect";
-import TaskSelect from "./itemSelect";
+import TaskSelect from "../Common/itemSelect";
 
 const JobTaskData = {
     "1A": ["A001", "A002", "A003", "A004", "A005"],
