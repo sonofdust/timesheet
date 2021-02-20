@@ -82,7 +82,67 @@ export const AppData =
             "fcoNum": "fco",
             "qpmsCode": "qpms",
             "workSite": "site"
+        },
+
+
+        {
+            "jobId": 2,
+            "jobName": "DDT01",
+            "taskId": 2,
+            "taskName": "ZZ02",
+            "time": {
+                "reg": [
+                    0,
+                    0,
+                    800,
+                    800,
+                    800,
+                    800,
+                    0
+                ],
+                "regTotal": 800,
+                "ot": [
+                    0,
+                    100,
+                    200,
+                    300,
+                    100,
+                    0,
+                    0
+                ],
+                "otTotal": 0
+            },
+            "comments": "This is a time sheet task comment",
+            "project": {
+                "projectId": "2",
+                "jobNo": "AB001",
+                "name": "Project Two",
+                "clientId": "2",
+                "clientName": "Eco Focus",
+                "projectMgr": "Fudd, Elmer Aloysious",
+                "costEng": "Samuels, Rhonda",
+                "billing": "Whitson, Ben",
+                "apContacts": "Samuels, Rhonda"
+            },
+            "task": {
+                "taskId": "2",
+                "dateOpened": "04/01/2020",
+                "name": "T002",
+                "description": "Phase 3 Scoping"
+            },
+            "client": {
+                "clientId": "2",
+                "name": "Eco Focus",
+                "description": "Client Two"
+            },
+            "fcoNum": "fco",
+            "qpmsCode": "qpms",
+            "workSite": "site"
         }
+
+
+
+
     ],
     "totalReg": [
         0,
