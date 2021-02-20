@@ -7,12 +7,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-//import { JobTaskList } from '../../AppData';
-import { JobTaskList } from '../../AppData';
-
+import { JobTaskList, AppData } from '../../AppData';
 import ItemSelect from '../Common/itemSelect';
-
-
+import { v4 } from 'uuid';
 
 const useStyles = makeStyles({
     table: {
@@ -20,24 +17,15 @@ const useStyles = makeStyles({
     }
 })
 
-const hours =
-{
-    SUN: { JOB1: { REG: 8, OT: 2 }, JOB2: { REG: 8, OT: 2 }, JOB3: { REG: 8, OT: 2 }, JOB4: { REG: 8, OT: 2 } },
-    MON: { JOB1: { REG: 8, OT: 2 }, JOB2: { REG: 8, OT: 2 }, JOB3: { REG: 8, OT: 2 }, JOB4: { REG: 8, OT: 2 } },
-    TUE: { JOB1: { REG: 8, OT: 2 }, JOB2: { REG: 8, OT: 2 }, JOB3: { REG: 8, OT: 2 }, JOB4: { REG: 8, OT: 2 } },
-    WED: { JOB1: { REG: 8, OT: 2 }, JOB2: { REG: 8, OT: 2 }, JOB3: { REG: 8, OT: 2 }, JOB4: { REG: 8, OT: 2 } },
-    THU: { JOB1: { REG: 8, OT: 2 }, JOB2: { REG: 8, OT: 2 }, JOB3: { REG: 8, OT: 2 }, JOB4: { REG: 8, OT: 2 } },
-    FRI: { JOB1: { REG: 8, OT: 2 }, JOB2: { REG: 8, OT: 2 }, JOB3: { REG: 8, OT: 2 }, JOB4: { REG: 8, OT: 2 } },
-    SAT: { JOB1: { REG: 8, OT: 2 }, JOB2: { REG: 8, OT: 2 }, JOB3: { REG: 8, OT: 2 }, JOB4: { REG: 8, OT: 2 } }
+const DAY = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
-};
-const header = ["Job ID", "Task ID", "", ...Object.keys(hours)];
+const header = ["Job ID", "Task ID", "", ...DAY];
 
 export default function MyTable() {
     const classes = useStyles();
     return (
         <div className="container">
-            <pre>{JSON.stringify(Object.keys(JobTaskList))}</pre>
+            {/* <pre>{JSON.stringify(AppData.taskDetails[0])}</pre> */}
             <div className="container-row">
 
                 {/* <JobTasksComp /> */}
@@ -49,14 +37,22 @@ export default function MyTable() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {Object.keys(hours.FRI).map((e, i) =>
+                            {AppData.taskDetails.map((e) =>
                             (
-                                <TableRow key={`hours-${i}`}>
-                                    <TableCell align="left"><ItemSelect items={Object.keys(JobTaskList)} title={``} label_id={e} /></TableCell>
-                                    <TableCell align="left"><ItemSelect items={Object.keys(JobTaskList)} title={``} label_id={e} /></TableCell>
-                                    {<TableCell align="left">{`REG`}<br />{`OT`}</TableCell>}
-                                    {Object.keys(hours).map((x) => (<TableCell align="left">{`${hours[x][e].REG}`}<br />{`${hours[x][e].OT}`}</TableCell>))}
+                                <TableRow key={v4}>
+                                    <TableCell align="left">{e.jobName}</TableCell>
+                                    <TableCell align="left">{e.taskName}</TableCell>
+                                    <TableCell align="left">REG<br/>OT</TableCell>
+                                    {e.time.reg.map((t, i) => (<TableCell align="left">{t}<br/>{e.time.ot[i]}</TableCell>))}
                                 </TableRow>
+
+                                // <TableRow key={v4}>
+                                //                                     <TableCell align="left"></TableCell>
+                                //                                     <TableCell align="left"></TableCell>
+                                //                                     {<TableCell align="left">{`OT`}</TableCell>}
+                                //                                     {e.time.ot.map((t, i) => (<TableCell align="left">{t}</TableCell>))}
+                                // </TableRow>
+
                             ))}
                         </TableBody>
                     </Table>
