@@ -125,15 +125,26 @@ export default function MyTable() {
             </TableHead>
             <TableBody>
               {AppData.taskDetails.map(
-                (e) =>
-                  // <TableRow key={v4}>
-                  //     <TableCell align="left">{e.jobName}</TableCell>
-                  //     <TableCell align="left">{e.taskName}</TableCell>
-                  //     <TableCell align="left">REG<br />OT</TableCell>
-                  //     {e.time.reg.map((t, i) => (<TableCell align="left">{t}<br />{e.time.ot[i]}</TableCell>))}
-                  // </TableRow>
+                (e) => (
+                  <TableRow key={v4}>
+                    <TableCell align="left">{e.jobName}</TableCell>
+                    <TableCell align="left">{e.taskName}</TableCell>
+                    <TableCell align="left">
+                      REG
+                      <br />
+                      OT
+                    </TableCell>
+                    {e.time.reg.map((t, i) => (
+                      <TableCell align="left">
+                        {t}
+                        <br />
+                        {e.time.ot[i]}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                )
 
-                  reg(e)
+                //                  reg(e)
                 // <TableRow key={v4}>
                 //                                     <TableCell align="left"></TableCell>
                 //                                     <TableCell align="left"></TableCell>

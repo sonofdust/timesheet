@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
 //import JobTask from './Components/JobTasksComp/JobTasks';
-import PayRollInfo from "./Components/PayRollInfoComp/PayRollInfo";
 import ApproverComp from "./Components/ApproverComp";
 import RadioGroup from "./Components/Common/radio_group";
 import NewComp from "./Components/NewComp";
